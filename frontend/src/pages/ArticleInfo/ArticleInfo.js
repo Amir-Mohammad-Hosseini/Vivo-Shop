@@ -134,12 +134,12 @@ export default function ArticleInfo() {
                     </li>
                     <li className="article-read__item">
                       <a href="#" className="article-read__link">
-                        یک راه آسان‌تر، دوره‌ های جاوا اسکریپت آکادمی سبزلرن!
+                        یک راه آسان‌تر، دوره‌ های جاوا اسکریپت آکادمی ویووشاپ!
                       </a>
                     </li>
                     <li className="article-read__item">
                       <a href="#" className="article-read__link">
-                        ثبت نام در دوره‌ های جاوا اسکریپت سبزلرن:
+                        ثبت نام در دوره‌ های جاوا اسکریپت ویووشاپ:
                       </a>
                     </li>
                   </ul>

@@ -242,7 +242,7 @@ export default function Category() {
                                         <div className="course__box-left-teacher">
                                           <i className="course__box-left-icon fa fa-chalkboard-teacher"></i>
                                           <span className="course__box-left-name">
-                                            محمد امین سعیدی راد
+                                             امیرمحمد حسینی
                                           </span>
                                         </div>
                                         <div className="course__box-left-stars">

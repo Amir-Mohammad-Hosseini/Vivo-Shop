@@ -469,7 +469,7 @@ export default function CourseInfo() {
                       />
                       <div className="techer-details__header-titles">
                         <a href="#" className="techer-details__header-link">
-                          {/* محمدامین سعیدی راد */}
+                          {/* امیرمحمد حسینی */}
                           {courseTeacher.name}
                         </a>
                         <span className="techer-details__header-skill">

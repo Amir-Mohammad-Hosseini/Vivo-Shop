@@ -100,7 +100,7 @@
   position: absolute;
   left: -.7rem;
   top: -.7rem;
-  background-color: #2bce56;
+  background-color: #af9164;
   padding: .3rem 1.3rem;
   font-size: 1.4rem;
   color: var(--white-color);
@@ -113,7 +113,7 @@
   transform: rotate(0deg);
 }
 .courses-box__price-discount {
-  color: #2bce56;
+  color: #af9164;
   font-size: 1.5rem;
   font-weight: bold;
   margin-left: 1rem;

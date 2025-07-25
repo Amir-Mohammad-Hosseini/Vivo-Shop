@@ -1,11 +1,11 @@
 
 /* ============================== Content Main Style ============================== */
 .ticket {
-    border-right: 2px solid #2bce56;
+    border-right: 2px solid af9164;
     padding-right: 3rem;
 }
 .ticket-header {
-    border-bottom: 2px solid #2bce56;
+    border-bottom: 2px solid af9164;
     display: flex;
     justify-content: space-between;
 }
@@ -18,7 +18,7 @@
 .ticket-header__link {
     display: block;
     margin: 2.5rem 0 1rem 0;
-    background-color: #2bce56;
+    background-color: af9164;
     color: var(--white-color);
     font-size: 1.3rem;
     border-radius: 3px;
@@ -69,12 +69,10 @@
     font-size: 1.3rem;
     padding: 1rem 0;
 }
-.ticket-form__file-input {
-}
 .ticket-form__btn {
     border: none;
     border-radius: 3px;
-    background-color: #2bce56;
+    background-color: af9164;
     color: var(--white-color);
     margin: 1.5rem 0;
     font-size: 1.4rem;

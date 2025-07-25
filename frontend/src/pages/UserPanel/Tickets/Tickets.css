@@ -1,10 +1,10 @@
 /* ============================== Content Main Style ============================== */
 .ticket {
-  border-right: 2px solid #2bce56;
+  border-right: 2px solid #af9164;
   padding-right: 3rem;
 }
 .ticket-header {
-  border-bottom: 2px solid #2bce56;
+  border-bottom: 2px solid #af9164;
   display: flex;
   justify-content: space-between;
 }
@@ -17,7 +17,7 @@
 .ticket-header__link {
   display: block;
   margin: 2.5rem 0 1rem 0;
-  background-color: #2bce56;
+  background-color: #af9164;
   color: var(--white-color);
   font-size: 1.3rem;
   border-radius: 3px;
@@ -104,7 +104,7 @@
   font-size: 1.4rem;
 }
 .ticket-filter__btn {
-  background-color: #2bce56;
+  background-color: #af9164;
   color: var(--white-color);
   font-size: 1.4rem;
   border-radius: 3px;
@@ -121,7 +121,7 @@
 }
 .ticket-content__box {
   background-color: #e4e4e4;
-  border-right: 3px solid #2bce56;
+  border-right: 3px solid #af9164;
   border-radius: 3px;
   margin: 0.5rem 0;
   padding: 2rem 1.3rem;
@@ -136,8 +136,6 @@
 .ticket-content__right-right {
   display: flex;
   flex-direction: column;
-}
-.ticket-content__right-left {
 }
 .ticket-content__link {
   color: #000;

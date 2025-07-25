@@ -1,6 +1,6 @@
 :root {
   --primary-font: "IranSans";
-  --primary-color: #2bce56;
+  --primary-color: #6f1a07;
   --white-color: #fff;
   --dark-color: #464749;
 }
@@ -201,8 +201,8 @@ body {
 
 /* ============================== Content Header Style ============================== */
 .content-header {
-  border-top: 2px solid #2bce56;
-  border-bottom: 2px solid #2bce56;
+  border-top: 2px solid #6f1a07;
+  border-bottom: 2px solid #6f1a07;
   padding: 1.7rem 0;
 }
 .content-header__title {
@@ -236,7 +236,7 @@ body {
 
 /* ============================== Content Main Style ============================== */
 .courses {
-  border-right: 2px solid #2bce56;
+  border-right: 2px solid #6f1a07;
   padding-right: 3rem;
 }
 
@@ -252,7 +252,7 @@ body {
 }
 .courses-header__list {
   display: flex;
-  border-bottom: 2px solid #2bce56;
+  border-bottom: 2px solid #6f1a07;
 }
 .courses-header__item {
   margin: 1rem 0 1rem 3.5rem;
@@ -261,13 +261,13 @@ body {
   font-size: 1.5rem;
 }
 .courses-header__link-active {
-  color: #2bce56;
+  color: #6f1a07;
   font-weight: bold;
 }
 .main__box {
   display: flex;
   margin: 2rem 0;
-  border: 2px solid #2bce56;
+  border: 2px solid #6f1a07;
   border-radius: 0.5rem;
   overflow: hidden;
 }
@@ -295,7 +295,7 @@ body {
 }
 .main__box-all-text {
   font-weight: bold;
-  color: #2bce56;
+  color: #6f1a07;
 }
 
 .main__box-completed {
@@ -303,7 +303,7 @@ body {
 }
 .main__box-completed-text {
   font-weight: bold;
-  color: #2bce56;
+  color: #6f1a07;
 }
 
 /* ============================== Content Main Style ============================== */
@@ -428,7 +428,7 @@ body {
 /* ============================== Slider Style ============================== */
 :root {
   --primary-font: "IranSans";
-  --primary-color: #2bce56;
+  --primary-color: #6f1a07;
   --white-color: #fff;
   --dark-color: #464749;
 }
@@ -629,8 +629,8 @@ body {
 
 /* ============================== Content Header Style ============================== */
 .content-header {
-  border-top: 2px solid #2bce56;
-  border-bottom: 2px solid #2bce56;
+  border-top: 2px solid #6f1a07;
+  border-bottom: 2px solid #6f1a07;
   padding: 1.7rem 0;
 }
 .content-header__title {
@@ -664,7 +664,7 @@ body {
 
 /* ============================== Content Main Style ============================== */
 .courses {
-  border-right: 2px solid #2bce56;
+  border-right: 2px solid #6f1a07;
   padding-right: 3rem;
 }
 .courses-header__title {
@@ -673,7 +673,7 @@ body {
 }
 .courses-header__list {
   display: flex;
-  border-bottom: 2px solid #2bce56;
+  border-bottom: 2px solid #6f1a07;
 }
 .courses-header__item {
   margin: 1rem 0 1rem 3.5rem;
@@ -682,14 +682,14 @@ body {
   font-size: 1.5rem;
 }
 .courses-header__link-active {
-  color: #2bce56;
+  color: #6f1a07;
   font-weight: bold;
 }
 
 .main__box {
   display: flex;
   margin: 2rem 0;
-  border: 2px solid #2bce56;
+  border: 2px solid #6f1a07;
   border-radius: 0.5rem;
   overflow: hidden;
 }
@@ -717,7 +717,7 @@ body {
 }
 .main__box-all-text {
   font-weight: bold;
-  color: #2bce56;
+  color: #6f1a07;
 }
 
 .main__box-completed {
@@ -725,7 +725,7 @@ body {
 }
 .main__box-completed-text {
   font-weight: bold;
-  color: #2bce56;
+  color: #6f1a07;
 }
 
 /* ============================== Content Main Style ============================== */

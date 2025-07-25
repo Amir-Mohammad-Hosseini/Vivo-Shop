@@ -10,7 +10,7 @@ export default function AboutUs() {
       <div className="container">
         <SectionHeader
           title="ما چه کمکی بهتون میکنیم؟"
-          desc="از اونجایی که آکادمی آموزشی سبزلرن یک آکادمی خصوصی هست"
+          desc="از اونجایی که آکادمی آموزشی ویووشاپ یک آکادمی خصوصی هست"
         />
 
         <div className="container">

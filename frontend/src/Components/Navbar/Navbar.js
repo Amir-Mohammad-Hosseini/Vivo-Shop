@@ -24,7 +24,7 @@ export default function Navbar() {
             <img
               src="/images/logo/Logo.png"
               className="main-header__logo"
-              alt="لوگوی سبزلرن"
+              alt="لوگوی ویووشاپ"
             />
 
             <ul className="main-header__menu">
@@ -72,7 +72,7 @@ export default function Navbar() {
             <a href="#" className="main-header__search-btn">
               <i className="fas fa-search main-header__search-icon"></i>
             </a>
-            <a href="#" className="main-header__cart-btn">
+            <a href="my-account/orders" className="main-header__cart-btn">
               <i className="fas fa-shopping-cart main-header__cart-icon"></i>
             </a>
 

@@ -1,6 +1,6 @@
 /* ============================== Content Main Style ============================== */
 .edit {
-  border-right: 2px solid #2bce56;
+  border-right: 2px solid #6f1a07;
   padding-right: 3rem;
 }
 .edit__label {
@@ -12,7 +12,7 @@
 .edit__input {
   width: 100%;
   border: none;
-  border: 1px solid #2bce56;
+  border: 1px solid #6f1a07;
   border-radius: 0.5rem;
   font-size: 1.4rem;
   padding: 0.5rem 1rem;
@@ -29,13 +29,13 @@
   margin-top: 2rem;
 }
 .edit__password-title {
-  border-bottom: 2px solid #2bce56;
+  border-bottom: 2px solid #6f1a07;
   display: block;
 }
 .edit__btn {
   border: none;
   margin-top: 2rem;
-  background-color: #2bce56;
+  background-color: #6f1a07;
   color: var(--white-color);
   border-radius: 0.3rem;
   font-size: 1.4rem;

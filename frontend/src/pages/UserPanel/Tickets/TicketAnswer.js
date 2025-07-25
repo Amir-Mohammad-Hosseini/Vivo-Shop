@@ -69,7 +69,7 @@ export default function TicketAnswer() {
             </div>
             <div class="ticket-send__answer-bottom">
               <span class="ticket-send__answer-name ticket-send__answer-span">
-                محمد امین سعیدی راد
+            امیرمحمد حسینی
               </span>
               <span class="ticket-send__answer-date ticket-send__answer-span">
                 2022-11-29
@@ -97,7 +97,7 @@ export default function TicketAnswer() {
               </div>
               <div class="ticket-send__answer-user-bottom">
                 <span class="ticket-send__answer-user-name ticket-send__answer-user-span">
-                  محمد امین سعیدی راد
+                    امیرمحمد حسینی
                 </span>
                 <span class="ticket-send__answer-user-date ticket-send__answer-user-span">
                   2022-11-29

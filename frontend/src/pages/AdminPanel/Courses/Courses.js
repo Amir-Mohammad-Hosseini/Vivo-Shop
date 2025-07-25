@@ -57,6 +57,7 @@ export default function Courses() {
   function getAllCourses() {
     const localStorageData = JSON.parse(localStorage.getItem("user"));
     fetch("http://localhost:4000/v1/courses", {
+      method : "GET" , 
       headers: {
         Authorization: `Bearer ${localStorageData.token}`,
       },
@@ -205,7 +206,7 @@ export default function Courses() {
                   element="input"
                   onInputHandler={onInputHandler}
                   validations={[minValidator(5)]}
-                  type="text"
+                  type="number"
                   isValid="false"
                   placeholder="لطفا قیمت دوره را وارد کنید..."
                 />
@@ -310,29 +311,36 @@ export default function Courses() {
           </thead>
           <tbody>
             {courses.map((course, index) => (
-              <tr>
+              <tr key={course._id}>
                 <td>{index + 1}</td>
                 <td>{course.name}</td>
                 <td>
                   {course.price === 0
                     ? "رایگان"
-                    : course.price.toLocaleString()}
+                    : (+course.price).toLocaleString()}
                 </td>
                 <td>
                   {course.isComplete === 0 ? "در حال برگزاری" : "تکمیل شده"}
                 </td>
                 <td>{course.shortName}</td>
-                <td>{course.creator}</td>
-                <td>{course.categoryID}</td>
+                <td>{typeof course.creator === 'object' 
+                      ? course.creator.name 
+                      : course.creator}
+                </td>
                 <td>
-                  <button type="button" class="btn btn-primary edit-btn">
+                  {typeof course.categoryID === 'object' 
+                  ? course.categoryID.title 
+                  : course.categoryID}
+                </td>
+                <td>
+                  <button type="button" className="btn btn-primary edit-btn">
                     ویرایش
                   </button>
                 </td>
                 <td>
                   <button
                     type="button"
-                    class="btn btn-danger delete-btn"
+                    className="btn btn-danger delete-btn"
                     onClick={() => removeCourse(course._id)}
                   >
                     حذف

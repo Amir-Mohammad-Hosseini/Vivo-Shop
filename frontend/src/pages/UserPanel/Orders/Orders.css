@@ -1,6 +1,6 @@
 /* ============================== Content Main Style ============================== */
 .order {
-  border-right: 2px solid #2bce56;
+  border-right: 2px solid #af9164;
   padding-right: 3rem;
 }
 .order__table {
@@ -22,7 +22,7 @@
 .order__table-body-btn {
   display: block;
   margin: 0.9rem 0;
-  background-color: #2bce56;
+  background-color: #af9164;
   color: var(--white-color);
   text-align: center;
   font-size: 1.4rem;
@@ -38,7 +38,7 @@
 .order__btn {
   display: block;
   margin: 0.9rem 0;
-  background-color: #2bce56;
+  background-color: #af9164;
   color: var(--white-color);
   text-align: center;
   font-size: 1.4rem;
