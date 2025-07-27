@@ -24,8 +24,8 @@ export default function PopularCourses() {
     <div className="popular">
       <div className="container">
         <SectionHeader
-          title="محبوب ترین دوره ها"
-          desc="دوره های محبوب بر اساس امتیاز دانشجوها"
+          title="محبوب ترین محصولات ها"
+          desc="محصولات های محبوب بر اساس امتیاز دانشجوها"
         />
 
         <div className="courses-content">

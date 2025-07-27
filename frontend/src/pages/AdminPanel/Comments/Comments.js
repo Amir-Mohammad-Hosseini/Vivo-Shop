@@ -179,7 +179,7 @@ export default function Comments() {
             <tr>
               <th>شناسه</th>
               <th>کاربر</th>
-              <th>دوره</th>
+              <th>محصول</th>
               <th>امتیاز</th>
               <th>مشاهده</th>
               <th>پاسخ</th>

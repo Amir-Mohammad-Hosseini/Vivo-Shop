@@ -98,19 +98,19 @@ export default function Menus() {
     <>
       <div class="container">
         <div class="home-title">
-          <span>افزودن کاربر جدید</span>
+          <span>افزودن منوی جدید</span>
         </div>
         <form class="form">
           <div class="col-6">
             <div class="name input">
-              <label class="input-title">عنوان</label>
+              <label class="input-title">عنوان منو</label>
               <Input
                 element="input"
                 onInputHandler={onInputHandler}
                 id="title"
                 type="text"
                 isValid="false"
-                placeholder="لطفا عنوان را وارد کنید..."
+                placeholder="لطفا عنوان منو را وارد کنید..."
                 validations={[minValidator(5)]}
               />
               <span class="error-message text-danger"></span>
@@ -118,7 +118,7 @@ export default function Menus() {
           </div>
           <div class="col-6">
             <div class="name input">
-              <label class="input-title">عنوان</label>
+              <label class="input-title">مقصد</label>
               <Input
                 element="input"
                 onInputHandler={onInputHandler}
@@ -126,14 +126,14 @@ export default function Menus() {
                 type="text"
                 isValid="false"
                 validations={[minValidator(5)]}
-                placeholder="لطفا عنوان را وارد کنید..."
+                placeholder="لطفا مقصد را وارد کنید..."
               />
               <span class="error-message text-danger"></span>
             </div>
           </div>
           <div class="col-6">
             <div class="name input">
-              <label class="input-title">عنوان</label>
+              <label class="input-title">منوی والد</label>
               <select
                 class="select"
                 onChange={(event) => setMenuParent(event.target.value)}

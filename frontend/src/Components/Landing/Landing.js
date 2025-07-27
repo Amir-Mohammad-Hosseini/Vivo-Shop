@@ -25,7 +25,7 @@ export default function Landing({ info }) {
                 .start()
                 .pauseFor(2000)
                 .deleteAll()
-                .typeString("فروشگاه دوره های آموزشی - ویووشاپ")
+                .typeString("ویوو شاپ - فروشگ محصولات آنلاین")
                 .start()
                 .pauseFor(2000);
             }}
@@ -35,7 +35,7 @@ export default function Landing({ info }) {
           />
         </h1>
         <h2 className="landing__subtitle">
-          با فروشگاه دوره های آموزشی ویووشاپ ، پیشرفت خودت رو تضمین کن
+            با ویووشاپ ، محصولات به روز و باکیفیت بخر
         </h2>
         <div className="landing__searchbar">
           <input

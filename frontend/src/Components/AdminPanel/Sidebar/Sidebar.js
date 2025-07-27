@@ -43,7 +43,7 @@ export default function Sidebar() {
           </li>
           <li>
             <Link to="courses">
-              <span>دوره ها</span>
+              <span>محصولات</span>
             </Link>
           </li>
           <li>

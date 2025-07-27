@@ -336,6 +336,7 @@
 }
 
 .course-info__total-sale-icon {
+  margin: 0px 6px;
   color: #555555;
   font-size: 2.7rem;
 }

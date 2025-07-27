@@ -22,8 +22,8 @@ export default function PresellCourses() {
     <div className="popular">
       <div className="container">
         <SectionHeader
-          title="دوره های در حال پیش فروش"
-          desc="متن تستی برای توضیحات دوره های پیش فروش"
+          title="محصولات موجود"
+          desc="متن تستی برای توضیحات محصولات موجود"
         />
 
         <div className="courses-content">

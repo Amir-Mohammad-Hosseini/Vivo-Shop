@@ -43,14 +43,14 @@ exports.asnwer = async (req, res, next) => {
     var transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "sabzlearnir@gmail.com",
+        user: "vivoshop@gmail.com",
         // pass: "h z v g l t m f l s y v z p h q",
         pass: "r t f p n x v q j x x o p x a o",
       },
     });
 
     var mailOptions = {
-      from: "sabzlearnir@gmail.com",
+      from: "vivoshop@gmail.com",
       to: email,
       subject: "پاسخ پیغام شما از سمت فروشگاه ویووشاپ",
       text: answer,

@@ -71,7 +71,7 @@ export default function Tickets() {
               <th>کاربر</th>
               <th>عنوان</th>
               <th>نوع تیکت</th>
-              <th>دوره</th>
+              <th>محصول</th>
               <th>اولویت</th>
               <th>مشاهده</th>
               <th>پاسخ</th>

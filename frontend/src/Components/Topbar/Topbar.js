@@ -44,9 +44,9 @@ export default memo(function Topbar() {
           <div className="top-bar__left">
             <div className="top-bar__email">
               <a href="#" className="top-bar__email-text top-bar__link">
-                {/* vivolearnshop@gmail.com */}
+                {/* vivoshop@gmail.com */}
                 {
-                  indexInfo.email
+                  "Vivoshop@gmail.com"
                 }
               </a>
               <i className="fas fa-envelope top-bar__email-icon"></i>
@@ -55,7 +55,7 @@ export default memo(function Topbar() {
               <a href="#" className="top-bar__phone-text top-bar__link">
                 {/* 09194257368 */}
                 {
-                  indexInfo.phone
+                  "09194257368"
                 }
               </a>
               <i className="fas fa-phone top-bar__phone-icon"></i>

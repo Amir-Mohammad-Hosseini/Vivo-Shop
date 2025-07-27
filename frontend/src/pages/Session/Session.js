@@ -43,7 +43,7 @@ export default memo(function Session() {
               <div class="sidebar-topics__item">
                 <ul class="sidebar-topics__list">
                   {
-                    sessions.map(session => (
+                    sessions?.map(session => (
                       <Link to={`/${courseName}/${session._id}`}>
                         <li class="sidebar-topics__list-item">
                     <div class="sidebar-topics__list-right">
@@ -77,7 +77,7 @@ export default memo(function Session() {
                   <i class="episode-header__right-back-icon fa fa-angle-right"></i>
                   <div class="episode-header__right-home">
                     <Link class="episode-header__right-home-link" to={`/course-info/${courseName}`}>
-                      به دوره خانه بروید
+                      به محصول خانه بروید
                     </Link>
                     <i class="episode-header__right-home-icon fa fa-home"></i>
                   </div>
@@ -87,7 +87,7 @@ export default memo(function Session() {
                 <i class="episode-header__left-icon fa fa-play-circle"></i>
                 <span class="episode-header__left-text">
                   {" "}
-                  سوالات متداول در مورد جاوااسکریپت و دوره
+                  سوالات متداول در دورهمورد جاوااسکریپت و 
                 </span>
               </div>
             </div>

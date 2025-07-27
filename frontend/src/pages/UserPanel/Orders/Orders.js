@@ -33,7 +33,7 @@ export default function Orders() {
               <th class="order__table-header-item">شناسه</th>
               <th class="order__table-header-item">تاریخ</th>
               <th class="order__table-header-item">وضعیت</th>
-              <th class="order__table-header-item">دوره</th>
+              <th class="order__table-header-item">محصول</th>
               <th class="order__table-header-item">مبلغ</th>
               <th class="order__table-header-item">عملیات ها</th>
             </tr>

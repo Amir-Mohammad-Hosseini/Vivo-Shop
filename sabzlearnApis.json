@@ -489,14 +489,14 @@
 			"data": [
 				{
 					"key": "name",
-					"value": "دوره تستی",
+					"value": "خرید تستی",
 					"description": "",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "description",
-					"value": "توضیح دوره تستی",
+					"value": "توضیح خرید تستی",
 					"description": "",
 					"type": "text",
 					"enabled": true

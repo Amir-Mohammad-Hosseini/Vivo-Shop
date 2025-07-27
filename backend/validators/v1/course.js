@@ -1,8 +1,8 @@
 const yup = require("yup");
 
 const createCourseValidator = yup.object().shape({
-  name: yup.string().required("نام دوره الزامی است"),
-  description: yup.string().required("توضیحات دوره الزامی است"),
+  name: yup.string().required("نام محصول الزامی است"),
+  description: yup.string().required("توضیحات محصول الزامی است"),
   cover: yup.object().shape({
     size: yup
       .number()
@@ -17,19 +17,19 @@ const createCourseValidator = yup.object().shape({
   }),
 
   support: yup.string(),
-  shortName: yup.string().required("نام کوتاه دوره الزامی است"),
-  price: yup.number().required("قیمت دوره الزامی است").min(0),
+  shortName: yup.string().required("نام کوتاه محصول الزامی است"),
+  price: yup.number().required("قیمت محصول الزامی است").min(0),
   status: yup
     .string()
-    .required("وضعیت دوره الزامی است")
+    .required("وضعیت محصول الزامی است")
     .oneOf(
       ["start", "presell"],
       "وضعیت باید یکی از این 2 حالت باشد start و presell"
     ),
   discount: yup
     .number()
-    .min(0, "تخفیف دوره نمی‌تواند منفی باشد")
-    .max(100, "تخفیف دوره نمی‌تواند بیشتر از ۱۰۰ درصد باشد"),
+    .min(0, "تخفیف محصول نمی‌تواند منفی باشد")
+    .max(100, "تخفیف محصول نمی‌تواند بیشتر از ۱۰۰ درصد باشد"),
   categoryID: yup
     .string()
     .required("شناسه دسته‌بندی الزامی است")
@@ -64,8 +64,8 @@ const updateCourseValidator = yup.object().shape({
     ),
   discount: yup
     .number()
-    .min(0, "تخفیف دوره نمی‌تواند منفی باشد")
-    .max(100, "تخفیف دوره نمی‌تواند بیشتر از ۱۰۰ درصد باشد"),
+    .min(0, "تخفیف محصول نمی‌تواند منفی باشد")
+    .max(100, "تخفیف محصول نمی‌تواند بیشتر از ۱۰۰ درصد باشد"),
   categoryID: yup
     .string()
     .matches(/^[0-9a-fA-F]{24}$/, "شناسه دسته‌بندی معتبر نیست"),
@@ -77,7 +77,7 @@ const updateCourseValidator = yup.object().shape({
 
 const getOneValidator = yup.object().shape({
   params: yup.object().shape({
-    shortName: yup.string().required("نام کوتاه دوره الزامی است"),
+    shortName: yup.string().required("نام کوتاه محصول الزامی است"),
   }),
 });
 const createSessionValidator = yup.object().shape({
@@ -90,8 +90,8 @@ const createSessionValidator = yup.object().shape({
     .required("وضعیت رایگان/غیررایگان الزامی است"),
   id: yup
     .string()
-    .required("شناسه دوره الزامی است")
-    .matches(/^[0-9a-fA-F]{24}$/, "شناسه دوره معتبر نیست"),
+    .required("شناسه محصول الزامی است")
+    .matches(/^[0-9a-fA-F]{24}$/, "شناسه محصول معتبر نیست"),
   video: yup
     .mixed()
     .required("فایل ویدیوی جلسه الزامی است")
@@ -125,8 +125,8 @@ const removeCourseValidator = yup.object().shape({
   params: yup.object().shape({
     id: yup
       .string()
-      .required("شناسه دوره الزامی است")
-      .matches(/^[0-9a-fA-F]{24}$/, "شناسه دوره معتبر نیست"),
+      .required("شناسه محصول الزامی است")
+      .matches(/^[0-9a-fA-F]{24}$/, "شناسه محصول معتبر نیست"),
   }),
 });
 const removeSessionValidator = yup.object().shape({
@@ -139,7 +139,7 @@ const removeSessionValidator = yup.object().shape({
 });
 
 const getSessionInfoValidator = yup.object().shape({
-  shortName: yup.string().required("نام کوتاه دوره الزامی است"),
+  shortName: yup.string().required("نام کوتاه محصول الزامی است"),
   sessionID: yup
     .string()
     .required("شناسه جلسه الزامی است")
@@ -147,7 +147,7 @@ const getSessionInfoValidator = yup.object().shape({
 });
 
 const getRelatedValidator = yup.object().shape({
-  shortName: yup.string().required("نام کوتاه دوره الزامی است"),
+  shortName: yup.string().required("نام کوتاه محصول الزامی است"),
 });
 
 module.exports = {

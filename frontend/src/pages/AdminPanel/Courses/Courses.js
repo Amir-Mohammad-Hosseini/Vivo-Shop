@@ -72,7 +72,7 @@ export default function Courses() {
   const removeCourse = (courseID) => {
     const localStorageData = JSON.parse(localStorage.getItem("user"));
     swal({
-      title: "آیا از حذف دوره اطمینان داری؟",
+      title: "آیا از حذف محصول اطمینان داری؟",
       icon: "warning",
       buttons: ["نه", "آره"],
     }).then((result) => {
@@ -85,7 +85,7 @@ export default function Courses() {
         }).then((res) => {
           if (res.ok) {
             swal({
-              title: "دوره موردنظر با موفقیت حذف شد",
+              title: "محصول موردنظر با موفقیت حذف شد",
               icon: "success",
               buttons: "اوکی",
             }).then(() => {
@@ -93,7 +93,7 @@ export default function Courses() {
             });
           } else {
             swal({
-              title: "حذف دوره با مشکلی مواجه شد",
+              title: "حذف محصول با مشکلی مواجه شد",
               icon: "error",
               buttons: "اوکی",
             });
@@ -122,7 +122,7 @@ export default function Courses() {
 
     if (courseCategory === "-1") {
       swal({
-        title: "لطفا دسته بندی دوره را انتخاب کنید",
+        title: "لطفا دسته بندی محصول را انتخاب کنید",
         icon: "error",
       });
     } else {
@@ -136,7 +136,7 @@ export default function Courses() {
         console.log(res);
         if (res.ok) {
           swal({
-            title: "دوره جدید با موفقیت اضافه شد",
+            title: "محصول جدید با موفقیت اضافه شد",
             icon: "success",
             buttons: "اوکی",
           }).then(() => {
@@ -152,40 +152,40 @@ export default function Courses() {
       <div class="container-fluid" id="home-content">
         <div class="container">
           <div class="home-title">
-            <span>افزودن دوره جدید</span>
+            <span>افزودن محصول جدید</span>
           </div>
           <form class="form">
             <div class="col-6">
               <div class="name input">
-                <label class="input-title">نام دوره</label>
+                <label class="input-title">نام محصول</label>
                 <Input
                   id="name"
                   element="input"
                   onInputHandler={onInputHandler}
                   validations={[minValidator(5)]}
                   type="text"
-                  placeholder="لطفا نام دوره را وارد کنید..."
+                  placeholder="لطفا نام محصول را وارد کنید..."
                 />
                 <span class="error-message text-danger"></span>
               </div>
             </div>
             <div class="col-6">
               <div class="price input">
-                <label class="input-title">توضیحات دوره</label>
+                <label class="input-title">توضیحات محصول</label>
                 <Input
                   id="description"
                   element="input"
                   onInputHandler={onInputHandler}
                   validations={[minValidator(5)]}
                   type="text"
-                  placeholder="لطفا توضیحات دوره را وارد کنید..."
+                  placeholder="لطفا توضیحات محصول را وارد کنید..."
                 />
                 <span class="error-message text-danger"></span>
               </div>
             </div>
             <div class="col-6">
               <div class="number input">
-                <label class="input-title">Url دوره</label>
+                <label class="input-title">Url محصول</label>
                 <Input
                   id="shortName"
                   element="input"
@@ -193,14 +193,14 @@ export default function Courses() {
                   validations={[minValidator(5)]}
                   type="text"
                   isValid="false"
-                  placeholder="لطفا Url دوره را وارد کنید..."
+                  placeholder="لطفا Url محصول را وارد کنید..."
                 />
                 <span class="error-message text-danger"></span>
               </div>
             </div>
             <div class="col-6">
               <div class="price input">
-                <label class="input-title">قیمت دوره</label>
+                <label class="input-title">قیمت محصول</label>
                 <Input
                   id="price"
                   element="input"
@@ -208,14 +208,14 @@ export default function Courses() {
                   validations={[minValidator(5)]}
                   type="number"
                   isValid="false"
-                  placeholder="لطفا قیمت دوره را وارد کنید..."
+                  placeholder="لطفا قیمت محصول را وارد کنید..."
                 />
                 <span class="error-message text-danger"></span>
               </div>
             </div>
             <div class="col-6">
               <div class="price input">
-                <label class="input-title">نحوه پشتیبانی دوره</label>
+                <label class="input-title">نحوه پشتیبانی محصول</label>
                 <Input
                   id="support"
                   element="input"
@@ -223,14 +223,14 @@ export default function Courses() {
                   validations={[minValidator(5)]}
                   type="text"
                   isValid="false"
-                  placeholder="لطفا نحوه پشتیبانی دوره را وارد کنید..."
+                  placeholder="لطفا نحوه پشتیبانی محصول را وارد کنید..."
                 />
                 <span class="error-message text-danger"></span>
               </div>
             </div>
             <div class="col-6">
               <div class="number input">
-                <label class="input-title">دسته‌بندی دوره</label>
+                <label class="input-title">دسته‌بندی محصول</label>
                 <select onChange={selectCategory}>
                   <option value="-1">لطفا دسته بندی را انتخاب نمایید</option>
                   {categories.map((category) => (
@@ -242,7 +242,7 @@ export default function Courses() {
             </div>
             <div class="col-6">
               <div class="file">
-                <label class="input-title">عکس دوره</label>
+                <label class="input-title">عکس محصول</label>
                 <input
                   type="file"
                   id="file"
@@ -255,11 +255,11 @@ export default function Courses() {
             <div class="col-12">
               <div class="bottom-form">
                 <div class="condition">
-                  <label class="input-title">وضعیت دوره</label>
+                  <label class="input-title">وضعیت محصول</label>
                   <div class="radios">
                     <div class="available">
                       <label>
-                        <span>در حال برگزاری</span>
+                        <span>ناموجود</span>
                         <input
                           type="radio"
                           value="start"
@@ -273,7 +273,7 @@ export default function Courses() {
                     </div>
                     <div class="unavailable">
                       <label>
-                        <span>پیش فروش</span>
+                        <span>موجود</span>
                         <input
                           type="radio"
                           value="presell"
@@ -294,7 +294,7 @@ export default function Courses() {
           </form>
         </div>
       </div>
-      <DataTable title="دوره‌ها">
+      <DataTable title="محصول‌ها">
         <table class="table">
           <thead>
             <tr>
@@ -303,7 +303,7 @@ export default function Courses() {
               <th>مبلغ</th>
               <th>وضعیت</th>
               <th>لینک</th>
-              <th>مدرس</th>
+              <th>فروشنده</th>
               <th>دسته بندی</th>
               <th>ویرایش</th>
               <th>حذف</th>
@@ -320,7 +320,7 @@ export default function Courses() {
                     : (+course.price).toLocaleString()}
                 </td>
                 <td>
-                  {course.isComplete === 0 ? "در حال برگزاری" : "تکمیل شده"}
+                  {course.isComplete === 0 ? "موجود" : "اتمام موجودی"}
                 </td>
                 <td>{course.shortName}</td>
                 <td>{typeof course.creator === 'object' 

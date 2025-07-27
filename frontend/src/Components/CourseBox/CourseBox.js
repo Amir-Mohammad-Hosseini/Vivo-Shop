@@ -19,7 +19,6 @@ export default function CourseBox(props) {
         <Link to={`/course-info/${props.shortName}`}>
           <img
             src={`http://localhost:4000/courses/covers/${props.cover}`}
-            // src="https://placeimg.com/295/295/any/tech?t=190129384"
             alt="Course img"
             className="course-box__img"
             onLoad={onImageLoaded}

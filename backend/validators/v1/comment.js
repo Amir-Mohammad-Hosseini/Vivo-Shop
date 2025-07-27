@@ -2,7 +2,7 @@ const yup = require("yup");
 
 const createCommentValidator = yup.object().shape({
   body: yup.string().required("متن نظر الزامی است"),
-  courseShortName: yup.string().required("نام کوتاه دوره الزامی است"),
+  courseShortName: yup.string().required("نام کوتاه محصول الزامی است"),
   score: yup
     .number()
     .integer()
