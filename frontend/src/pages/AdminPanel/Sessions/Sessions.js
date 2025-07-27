@@ -141,13 +141,13 @@ export default function Sessions() {
             <div class="col-6">
               <div class="price input">
                 <label class="input-title" style={{ display: "block" }}>
-                  دوره
+                  محصول
                 </label>
                 <select
                   class="select"
                   onChange={(event) => setSessionCourse(event.target.value)}
                 >
-                  <option value="-1">دوره مدنظر را انتخاب کنید</option>
+                  <option value="-1">محصول مدنظر را انتخاب کنید</option>
                   {courses.map((course) => (
                     <option value={course._id} key={course._id}>
                       {course.name}
@@ -170,7 +170,7 @@ export default function Sessions() {
             <div class="col-12">
               <div class="bottom-form">
                 <div class="condition">
-                  <label class="input-title">وضعیت دوره</label>
+                  <label class="input-title">وضعیت محصول</label>
                   <div class="radios">
                     <div class="available">
                       <label>
@@ -221,7 +221,7 @@ export default function Sessions() {
               <th>شناسه</th>
               <th>عنوان</th>
               <th>تایم</th>
-              <th>دوره</th>
+              <th>محصول</th>
               <th>حذف</th>
             </tr>
           </thead>

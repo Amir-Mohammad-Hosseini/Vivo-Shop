@@ -85,7 +85,7 @@ export default function Category() {
               <div className="row">
                 {courses.length === 0 ? (
                   <div className="alert alert-warning">
-                    هنوز هیچ دوره‌ای برای این کتگوری وجود ندارد
+                    هنوز هیچ محصولی برای این کتگوری وجود ندارد
                   </div>
                 ) : (
                   <>
@@ -135,7 +135,7 @@ export default function Category() {
                                 statusTitleChangeHandler(event);
                               }}
                             >
-                              مرتب سازی دوره های رایگان
+                              مرتب سازی محصولات رایگان
                             </li>
                             <li
                               className="courses-top-bar__selection-item"
@@ -144,7 +144,7 @@ export default function Category() {
                                 statusTitleChangeHandler(event);
                               }}
                             >
-                              مرتب سازی دوره های پولی
+                              مرتب سازی محصولات پولی
                             </li>
                             <li
                               className="courses-top-bar__selection-item"
@@ -191,7 +191,7 @@ export default function Category() {
                           <input
                             type="text"
                             className="courses-top-bar__input"
-                            placeholder="جستجوی دوره ..."
+                            placeholder="جستجوی محصول ..."
                             value={searchValue}
                             onChange={searchValueChangeHandler}
                           />
@@ -202,7 +202,7 @@ export default function Category() {
 
                     {shownCourses.length === 0 ? (
                       <div className="alert alert-warning">
-                        هیچ دوره‌ای برای {statusTitle} وجود ندارد
+                        هیچ محصولی برای {statusTitle} وجود ندارد
                       </div>
                     ) : (
                       <>

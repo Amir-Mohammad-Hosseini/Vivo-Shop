@@ -11,7 +11,7 @@ export default function Html() {
         <p>
             <b>توضیحات بولد</b>
         </p>
-        <img src="oinfbo" onerror="alert('HACKED BY SABZLEARN :))')" />
+        <img src="oinfbo" onerror="alert('HACKED BY VIVOLEARN :))')" />
     `
 
   return (

@@ -24,7 +24,7 @@ export default function CommentsTextArea({ comments, submitComment }) {
       <div className="comments__content">
         {comments.length === 0 ? (
           <div className="alert alert-warning">
-            هنوز کامنتی برای این دوره ثبت نشده
+            هنوز کامنتی برای این محصول ثبت نشده
           </div>
         ) : (
           <>
@@ -131,12 +131,12 @@ export default function CommentsTextArea({ comments, submitComment }) {
             <span className="comments__rules-title">قوانین ثبت دیدگاه</span>
             <span className="comments__rules-item">
               <i className="fas fa-check comments__rules-icon"></i>
-              اگر نیاز به پشتیبانی دوره دارید از قسمت پرسش سوال در قسمت نمایش
+              اگر نیاز به پشتیبانی محصول دارید از قسمت پرسش سوال در قسمت نمایش
               انلاین استفاده نمایید و سوالات مربوط به رفع اشکال تایید نخواهند شد
             </span>
             <span className="comments__rules-item">
               <i className="fas fa-check comments__rules-icon"></i>
-              دیدگاه های نامرتبط به دوره تایید نخواهد شد.
+              دیدگاه های نامرتبط به محصول تایید نخواهد شد.
             </span>
             <span className="comments__rules-item">
               <i className="fas fa-check comments__rules-icon"></i>

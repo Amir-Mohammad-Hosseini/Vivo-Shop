@@ -46,7 +46,7 @@ exports.getPAdmin = async (req, res, next) => {
         },
         {
           count: coursesCount,
-          title: "دوره‌ها",
+          title: "محصولات",
         },
         {
           count: sessionsCount,

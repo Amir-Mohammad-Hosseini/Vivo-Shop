@@ -52,7 +52,7 @@ export default function Courses() {
     <div class="col-9">
       <div class="courses">
         <div class="courses-header__panel">
-          <span class="courses-header__title">دوره های ثبت نام شده</span>
+          <span class="courses-header__title">محصولات اضافه شده به سبد</span>
           <ul class="courses-header__list">
             <li
               class="courses-header__item"
@@ -70,7 +70,7 @@ export default function Courses() {
                 }`}
                 href="#"
               >
-                همه دوره ها
+                همه محصولها
               </a>
             </li>
             <li
@@ -89,7 +89,7 @@ export default function Courses() {
                 }`}
                 href="#"
               >
-                دوره های رایگان
+                محصولهای رایگان
               </a>
             </li>
             <li
@@ -108,7 +108,7 @@ export default function Courses() {
                 }`}
                 href="#"
               >
-                دوره های پولی
+                محصولهای پولی
               </a>
             </li>
           </ul>
@@ -137,8 +137,8 @@ export default function Courses() {
                             <span class="main__box-all-text">وضعیت:</span>
                             <span class="main__box-all-value">
                               {course.course.isComplete === 1
-                                ? "تکمیل شده"
-                                : "در حال برگزاری"}
+                                ? "اتمام موجودی"
+                                : "موجود"}
                             </span>
                           </div>
                           <div class="main__box-completed">
@@ -156,7 +156,7 @@ export default function Courses() {
                 </>
               ) : (
                 <div className="alert alert-danger">
-                  دوره‌ای جهت نمایش برای این فیلتر وجود ندارد
+                  محصولی جهت نمایش برای این فیلتر وجود ندارد
                 </div>
               )}
             </div>

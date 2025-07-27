@@ -143,7 +143,7 @@ export default function SendTicket() {
             </div>
             {ticketTypeID === "637753247b52cb74cad00e27" && (
               <div class="col-6">
-                <label class="ticket-form__label">دوره را انتخاب کنید:</label>
+                <label class="ticket-form__label">محصول را انتخاب کنید:</label>
                 <select
                   class="ticket-form__select"
                   onChange={(event) => setCourseID(event.target.value)}

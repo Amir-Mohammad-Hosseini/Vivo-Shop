@@ -56,7 +56,7 @@ export default function Sidebar() {
           </li>
           <li class="sidebar__item">
             <Link class="sidebar__link" to="buyed">
-              دوره های خریداری شده
+              محصولات خریداری شده
             </Link>
           </li>
           <li class="sidebar__item">

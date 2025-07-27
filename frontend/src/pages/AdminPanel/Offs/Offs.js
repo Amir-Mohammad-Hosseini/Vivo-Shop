@@ -167,13 +167,13 @@ export default function Offs() {
             <div class="col-6">
               <div class="price input">
                 <label class="input-title" style={{ display: "block" }}>
-                  دوره
+                  محصول
                 </label>
                 <select
                   class="select"
                   onChange={(event) => setOffCourse(event.target.value)}
                 >
-                  <option value="-1">دوره مدنظر را انتخاب کنید</option>
+                  <option value="-1">محصول مدنظر را انتخاب کنید</option>
                   {courses.map((course) => (
                     <option key={course._id} value={course._id}>
                       {course.name}

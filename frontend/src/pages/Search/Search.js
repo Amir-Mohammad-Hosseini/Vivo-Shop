@@ -29,7 +29,7 @@ export default function Search() {
       <div className="courses">
         <div className="container">
           <SectionHeader
-            title="نتیجه دوره‌ها برای جستجوی شما"
+            title="نتیجه محصولات برای جستجوی شما"
             desc="سکوی پرتاپ شما به سمت موفقیت"
           />
           <div className="courses-content">
@@ -37,7 +37,7 @@ export default function Search() {
               <div className="row">
                 {courses.length === 0 ? (
                   <div className="alert alert-warning">
-                    دوره‌ای برای جستجوی شما وجود ندارد
+                    محصولی برای جستجوی شما وجود ندارد
                   </div>
                 ) : (
                   <>
