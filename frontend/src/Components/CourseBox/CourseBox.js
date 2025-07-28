@@ -44,8 +44,9 @@ export default function CourseBox(props) {
             <div className="course-box__rating">
               {Array(5 - props.courseAverageScore)
                 .fill(0)
-                .map((item) => (
+                .map((item , index) => (
                   <img
+                  key={`star-empty-${index}`}
                     src="/images/svgs/star.svg"
                     alt="rating"
                     className="course-box__star"
@@ -53,8 +54,9 @@ export default function CourseBox(props) {
                 ))}
               {Array(props.courseAverageScore)
                 .fill(0)
-                .map((item) => (
+                .map((item , index) => (
                   <img
+                    key={`star-filled-${index}`}
                     src="/images/svgs/star_fill.svg"
                     alt="rating"
                     className="course-box__star"
@@ -83,9 +85,6 @@ export default function CourseBox(props) {
             <i className="fas fa-arrow-left course-box__footer-icon"></i>
           </Link>
         </div>
-        {( props.price !== 0 && props.discount) && (
-          <span class="courses-box__discount">%{props.discount}</span>
-        )}
       </div>
     </div>
   );

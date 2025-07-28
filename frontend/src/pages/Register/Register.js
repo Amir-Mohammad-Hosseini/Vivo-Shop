@@ -46,43 +46,44 @@ export default function Register() {
     false
   );
 
-  const registerNewUser = (event) => {
-    event.preventDefault();
+const registerNewUser = (event) => {
+  event.preventDefault();
 
-    const newUserInfos = {
-      name: formState.inputs.name.value,
-      username: formState.inputs.username.value,
-      email: formState.inputs.email.value,
-      phone: formState.inputs.phone.value,
-      password: formState.inputs.password.value,
-      confirmPassword: formState.inputs.password.value,
-    };
-
-    fetch(`http://localhost:4000/v1/auth/register`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newUserInfos),
-    })
-      .then((res) => {
-        console.log(res);
-        if(res.ok) {
-          return res.json()
-        } else {
-          if (res.status === 403) {
-            swal({
-              title: 'این شماره تماس مسدود شده',
-              icon: 'error',
-              buttons: 'ای بابا'
-            })
-          }
-        }
-      })
-      .then((result) => {
-        authContext.login(result.user, result.accessToken);
-      });
+  const newUserInfos = {
+    name: formState.inputs.name.value.trim(),
+    username: formState.inputs.username.value.trim(),
+    email: formState.inputs.email.value,
+    phone: formState.inputs.phone.value,
+    password: formState.inputs.password.value.trim(),
+    confirmPassword: formState.inputs.password.value.trim(),
   };
+
+  fetch("http://localhost:4000/v1/auth/register", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(newUserInfos),
+  })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      if (res.status === 403) {
+        swal({ title: "این شماره تماس مسدود شده", icon: "error" });
+      } else if (res.status === 409) {
+        swal({ title: "کاربر با این ایمیل/نام‌کاربری/تلفن قبلاً ثبت شده", icon: "warning" });
+      } else {
+        swal({ title: "خطا در ثبت‌نام، لطفاً دوباره تلاش کنید", icon: "error" });
+      }
+      throw new Error("Registration failed with status " + res.status);
+    })
+    .then((result) => {
+      authContext.login(result.user, result.accessToken);
+    })
+    .catch((err) => {
+      console.error("Register error:", err);
+    });
+};
+
 
   return (
     <>
@@ -158,7 +159,7 @@ export default function Register() {
                 onInputHandler={onInputHandler}
                 validations={[
                   requiredValidator(),
-                  maxValidator(25),
+                  maxValidator(60),
                   emailValidator(),
                 ]}
               />
