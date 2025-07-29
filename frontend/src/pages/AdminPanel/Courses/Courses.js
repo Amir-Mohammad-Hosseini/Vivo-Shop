@@ -234,7 +234,7 @@ export default function Courses() {
                 <select onChange={selectCategory}>
                   <option value="-1">لطفا دسته بندی را انتخاب نمایید</option>
                   {categories.map((category) => (
-                    <option value={category._id}>{category.title}</option>
+                    <option value={category._id} key={category._id}>{category.title}</option>
                   ))}
                 </select>
                 <span class="error-message text-danger"></span>
@@ -265,7 +265,7 @@ export default function Courses() {
                           value="start"
                           name="condition"
                           checked
-                          onInput={(event) =>
+                          onChange={(event) =>
                             setCourseStatus(event.target.value)
                           }
                         />
@@ -278,7 +278,7 @@ export default function Courses() {
                           type="radio"
                           value="presell"
                           name="condition"
-                          onInput={(event) =>
+                          onChange={(event) =>
                             setCourseStatus(event.target.value)
                           }
                         />
@@ -328,7 +328,7 @@ export default function Courses() {
                       : course.creator}
                 </td>
                 <td>
-                  {typeof course.categoryID === 'object' 
+                  {course.categoryID && typeof course.categoryID === 'object' 
                   ? course.categoryID.title 
                   : course.categoryID}
                 </td>

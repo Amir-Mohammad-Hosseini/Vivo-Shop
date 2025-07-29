@@ -40,7 +40,7 @@ export default function Index() {
             <div class="row">
               {
                  infos.map(item => (
-                   <PAdminItem {...item} />
+                   <PAdminItem {...item} key={item.id} />
                  ))
               }
               

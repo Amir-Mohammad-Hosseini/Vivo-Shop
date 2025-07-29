@@ -25,7 +25,7 @@ export default function Landing({ info }) {
                 .start()
                 .pauseFor(2000)
                 .deleteAll()
-                .typeString("ویوو شاپ - فروشگ محصولات آنلاین")
+                .typeString("ویوو شاپ - فروشگاه محصولات آنلاین")
                 .start()
                 .pauseFor(2000);
             }}
