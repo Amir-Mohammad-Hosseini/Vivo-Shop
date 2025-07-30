@@ -50,7 +50,7 @@ Before you begin, ensure you have the following installed:
 
 ## Important Notes
 
-- If you encounter warnings about vulnerable packages after running npm i, use npm audit fix.
+- If you encounter warnings about vulnerable packages after running npm i, do not use npm audit fix.
 - An admin account is pre-configured for Professor Nobakht:
   - *Full Name:* استاد نوبخت
   - *Username:* ostad_nobakht
