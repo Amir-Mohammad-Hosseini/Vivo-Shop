@@ -17,6 +17,7 @@ Vivo Shop is a full-stack web application developed as a final project for the w
 - Newsletter subscription
 - Contact us page
 - Robust admin panel
+- JWT
 
 ## Prerequisites
 
