@@ -17,13 +17,14 @@ Vivo Shop is a full-stack web application developed as a final project for the w
 - Newsletter subscription
 - Contact us page
 - Robust admin panel
+- JWT
 
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
 - MongoDB
-- Studio 3T
+- Studio 3T or Mongo-Compass
 - Node.js
 - npm
 - VS Code (or any preferred code editor)
@@ -33,7 +34,7 @@ Before you begin, ensure you have the following installed:
 
 1. Ensure you have MongoDB and Studio 3T installed on your system.
 2. In Studio 3T, create a new connection named "localhost:27017".
-3. Import the "lms.agz" file from the backend folder of the project into Studio 3T and run it to set up the database.
+3. Import the "lms.agz" file from the backend folder of the project into Studio 3T or Mongo-Compass and run it to set up the database.
 4. Open VS Code and navigate to the backend folder using cd backend.
 5. Run npm i to install backend dependencies. (Note: Node.js and npm should be pre-installed.)
 6. Start the backend server with npm run dev.
