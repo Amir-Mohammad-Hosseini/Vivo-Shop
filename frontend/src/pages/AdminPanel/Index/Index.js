@@ -3,6 +3,7 @@ import DataTable from "../../../Components/AdminPanel/DataTable/DataTable";
 import PAdminItem from "../../../Components/AdminPanel/PAdminItem/PAdminItem";
 
 import "./Index.css";
+import { use } from "react";
 
 export default function Index() {
 
@@ -20,7 +21,6 @@ export default function Index() {
     })
       .then((res) => res.json())
       .then((pageInfo) => {
-        console.log(pageInfo);
         setInfos(pageInfo.infos)
         setLastRegisteredUsers(pageInfo.lastUsers)
         setAdminName(pageInfo.adminName)
@@ -29,15 +29,15 @@ export default function Index() {
 
   return (
     <>
-      <div class="container-fluid" id="home-content">
-        <div class="container">
-          <div class="home-content-title">
-            <span class="welcome">
-              خوش آمدید,<span class="name">{adminName}</span>
+      <div className="container-fluid" id="home-content">
+        <div className="container">
+          <div className="home-content-title">
+            <span className="welcome">
+              خوش آمدید,<span className="name">{adminName}</span>
             </span>
           </div>
-          <div class="home-content-boxes">
-            <div class="row">
+          <div className="home-content-boxes">
+            <div className="row">
               {
                  infos.map(item => (
                    <PAdminItem {...item} key={item.id} />
@@ -47,10 +47,10 @@ export default function Index() {
             </div>
           </div>
 
-          <div class="home-content-latset-users">
+          <div className="home-content-latset-users">
             <DataTable title="افراد اخیرا ثبت نام شده">
 
-            <table class="table">
+            <table className="table">
           <thead>
             <tr>
               <th>شناسه</th>
@@ -60,7 +60,7 @@ export default function Index() {
           </thead>
           <tbody>
             {lastRegisteredUsers.map((user, index) => (
-              <tr>
+              <tr key={index + 1}>
                 <td>{index + 1}</td>
                 <td>{user.name}</td>
                 {/* <td>09123443243</td> */}

@@ -35,19 +35,28 @@ export default function Offs() {
       .then((allCourses) => setCourses(allCourses));
   }, []);
 
-  function getAllOffs() {
-    fetch(`http://localhost:4000/v1/offs`, {
-      headers: {
+function getAllOffs() {
+  fetch("http://localhost:4000/v1/off", {
+          headers: {
         Authorization: `Bearer ${
           JSON.parse(localStorage.getItem("user")).token
         }`,
       },
+  })
+    .then(res => {
+      if (!res.ok) {
+        console.error("Failed to fetch offs:", res.status);
+        return [];
+      }
+      return res.json();
     })
-      .then((res) => res.json())
-      .then((allOffs) => {
-        setOffs(allOffs);
-      });
-  }
+    .then(data => setOffs(data))
+    .catch(err => {
+      console.error(err);
+      setOffs([]);
+    });
+}
+
 
   const createOff = (event) => {
     event.preventDefault();
@@ -69,7 +78,6 @@ export default function Offs() {
       },
       body: JSON.stringify(newOffInfos),
     }).then((res) => {
-      console.log(res);
       if (res.ok) {
         swal({
           title: "کد تخفیف با موفقیت ایجاد شد",
@@ -113,15 +121,15 @@ export default function Offs() {
 
   return (
     <>
-      <div class="container-fluid" id="home-content">
-        <div class="container">
-          <div class="home-title">
+      <div className="container-fluid" id="home-content">
+        <div className="container">
+          <div className="home-title">
             <span>افزودن جلسه جدید</span>
           </div>
-          <form class="form">
-            <div class="col-6">
-              <div class="price input">
-                <label class="input-title">کد تخفیف</label>
+          <form className="form">
+            <div className="col-6">
+              <div className="price input">
+                <label className="input-title">کد تخفیف</label>
                 <Input
                   element="input"
                   onInputHandler={onInputHandler}
@@ -130,13 +138,13 @@ export default function Offs() {
                   validations={[minValidator(5)]}
                   placeholder="لطفا کد تخفیف را وارد نمایید"
                 />
-                <span class="error-message text-danger"></span>
+                <span className="error-message text-danger"></span>
               </div>
             </div>
 
-            <div class="col-6">
-              <div class="price input">
-                <label class="input-title">درصد تخفیف</label>
+            <div className="col-6">
+              <div className="price input">
+                <label className="input-title">درصد تخفیف</label>
                 <Input
                   element="input"
                   onInputHandler={onInputHandler}
@@ -145,13 +153,13 @@ export default function Offs() {
                   validations={[requiredValidator()]}
                   placeholder="لطفا درصد تخفیف را وارد نمایید"
                 />
-                <span class="error-message text-danger"></span>
+                <span className="error-message text-danger"></span>
               </div>
             </div>
 
-            <div class="col-6">
-              <div class="name input">
-                <label class="input-title">حداکثر استفاده</label>
+            <div className="col-6">
+              <div className="name input">
+                <label className="input-title">حداکثر استفاده</label>
                 <Input
                   element="input"
                   onInputHandler={onInputHandler}
@@ -160,17 +168,17 @@ export default function Offs() {
                   validations={[requiredValidator()]}
                   placeholder="حداکثر استفاده از کد تخفیف"
                 />
-                <span class="error-message text-danger"></span>
+                <span className="error-message text-danger"></span>
               </div>
             </div>
 
-            <div class="col-6">
-              <div class="price input">
-                <label class="input-title" style={{ display: "block" }}>
+            <div className="col-6">
+              <div className="price input">
+                <label className="input-title" style={{ display: "block" }}>
                   محصول
                 </label>
                 <select
-                  class="select"
+                  className="select"
                   onChange={(event) => setOffCourse(event.target.value)}
                 >
                   <option value="-1">محصول مدنظر را انتخاب کنید</option>
@@ -180,12 +188,12 @@ export default function Offs() {
                     </option>
                   ))}
                 </select>
-                <span class="error-message text-danger"></span>
+                <span className="error-message text-danger"></span>
               </div>
             </div>
-            <div class="col-12">
-              <div class="bottom-form">
-                <div class="submit-btn">
+            <div className="col-12">
+              <div className="bottom-form">
+                <div className="submit-btn">
                   <input type="submit" value="افزودن" onClick={createOff} />
                 </div>
               </div>
@@ -194,7 +202,7 @@ export default function Offs() {
         </div>
       </div>
       <DataTable title="کد های تخفیف">
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th>شناسه</th>
@@ -219,7 +227,7 @@ export default function Offs() {
                 <td>
                   <button
                     type="button"
-                    class="btn btn-danger delete-btn"
+                    className="btn btn-danger delete-btn"
                     onClick={() => removeOff(off._id)}
                   >
                     حذف

@@ -15,7 +15,6 @@ export default function Sidebar() {
       icon: "warning",
       buttons: ["نه", "آره"],
     }).then((result) => {
-      console.log(result);
       if (result) {
         swal({
           title: "با موفقیت خارج شدید",
@@ -30,42 +29,37 @@ export default function Sidebar() {
   };
 
   return (
-    <div class="col-3">
-      <div class="sidebar">
-        <span class="sidebar__name"></span>
-        <ul class="sidebar__list">
-          <li class="sidebar__item">
-            <Link class="sidebar__link" to="/my-account">
-              پیشخوان
+    <div className="col-3">
+      <div className="sidebar">
+        <span className="sidebar__name"></span>
+        <ul className="sidebar__list">
+          <li className="sidebar__item">
+            <Link className="sidebar__link" to="/my-account">
+              صفحه اصلی
             </Link>
           </li>
-          <li class="sidebar__item">
-            <Link class="sidebar__link" to="orders">
+          <li className="sidebar__item">
+            <Link className="sidebar__link" to="orders">
               سفارش‌ها
             </Link>
           </li>
-          <li class="sidebar__item">
-            <a class="sidebar__link" href="#">
-              کیف پول من
-            </a>
-          </li>
-          <li class="sidebar__item">
-            <Link class="sidebar__link" to="edit-account">
+          <li className="sidebar__item">
+            <Link className="sidebar__link" to="edit-account">
               جزئیات حساب کاربری
             </Link>
           </li>
-          <li class="sidebar__item">
-            <Link class="sidebar__link" to="buyed">
+          <li className="sidebar__item">
+            <Link className="sidebar__link" to="buyed">
               محصولات خریداری شده
             </Link>
           </li>
-          <li class="sidebar__item">
-            <Link class="sidebar__link" to="tickets">
+          <li className="sidebar__item">
+            <Link className="sidebar__link" to="tickets">
               تیکت های پشتیبانی
             </Link>
           </li>
-          <li class="sidebar__item" onClick={logoutUser}>
-            <a class="sidebar__link" href="#">
+          <li className="sidebar__item" onClick={logoutUser}>
+            <a className="sidebar__link" href="#">
               خروج از سیستم
             </a>
           </li>

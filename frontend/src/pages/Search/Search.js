@@ -16,7 +16,6 @@ export default function Search() {
     fetch(`http://localhost:4000/v1/search/${value}`)
       .then((res) => res.json())
       .then((allData) => {
-        console.log(allData);
         setArticles(allData.allResultArticles);
         setCourses(allData.allResultCourses);
       });

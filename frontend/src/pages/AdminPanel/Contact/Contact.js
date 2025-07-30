@@ -13,7 +13,6 @@ export default function Contact() {
     fetch("http://localhost:4000/v1/contact")
       .then((res) => res.json())
       .then((allContacts) => {
-        console.log(allContacts);
         setContacts(allContacts);
       });
   }
@@ -32,7 +31,6 @@ export default function Contact() {
       content: "input",
       buttons: "ارسال ایمیل",
     }).then((value) => {
-      console.log(value);
 
       const anwserInfo = {
         email: contactEmail,
@@ -48,22 +46,20 @@ export default function Contact() {
         body: JSON.stringify(anwserInfo),
       })
         .then((res) => {
-          console.log(res);
           if (res.ok) {
             getAllContacts()
             return res.json();
           }
         })
-        .then((result) => console.log(result));
     });
   };
 
   const removeContact = (contactID) => {
     const localStorageData = JSON.parse(localStorage.getItem("user"));
     swal({
-      title: "",
+      title: "آیا از حذف پیام مطمئن هستید ؟",
       icon: "warning",
-      buttons: ["نه", "آره"],
+      buttons: ["خیر", "بله"],
     }).then((result) => {
       if (result) {
         fetch(`http://localhost:4000/v1/contact/${contactID}`, {
@@ -89,7 +85,7 @@ export default function Contact() {
   return (
     <>
       <DataTable title="پیغام‌ها">
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th>شناسه</th>
@@ -103,7 +99,7 @@ export default function Contact() {
           </thead>
           <tbody>
             {contacts.map((contact, index) => (
-              <tr>
+              <tr key={contact._id}>
                 <td
                   className={contact.answer === 1 ? 'answer-contact' : 'no-answer-contact'}
                 >{index + 1}</td>
@@ -113,7 +109,7 @@ export default function Contact() {
                 <td>
                   <button
                     type="button"
-                    class="btn btn-primary edit-btn"
+                    className="btn btn-primary edit-btn"
                     onClick={() => showContactBody(contact.body)}
                   >
                     مشاهده پیغام
@@ -122,7 +118,7 @@ export default function Contact() {
                 <td>
                   <button
                     type="button"
-                    class="btn btn-primary edit-btn"
+                    className="btn btn-primary edit-btn"
                     onClick={() => sendAnwserToUser(contact.email)}
                   >
                     پاسخ
@@ -131,7 +127,7 @@ export default function Contact() {
                 <td>
                   <button
                     type="button"
-                    class="btn btn-danger delete-btn"
+                    className="btn btn-danger delete-btn"
                     onClick={() => removeContact(contact._id)}
                   >
                     حذف

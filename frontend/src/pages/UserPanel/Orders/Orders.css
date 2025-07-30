@@ -51,4 +51,17 @@
   color: var(--white-color);
   background-color: #33b355;
 }
+
+.total-price-box{
+  color: #947b55;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  border-bottom: 2px solid #af9164;
+}
+.total-price-box__text{
+  padding-bottom: 1.5rem;
+
+}
 /* ============================== Content Main Style ============================== */

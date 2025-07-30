@@ -77,7 +77,7 @@ export default function Contact() {
         <div className="login register-form">
           <span className="login__title">ارتباط با ما</span>
           <span className="login__subtitle">
-            نظر، پیشنهاد یا انتقادتو بنویس برامون :)
+            نظر، پیشنهاد یا انتقادتو بنویس برامون
           </span>
           <form action="#" className="login-form">
             <div className="login-form__username login-form__parent">

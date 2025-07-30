@@ -30,6 +30,8 @@ exports.create = async (req, res, next) => {
   }
 };
 
+// controllers/v1/comment.js
+
 exports.getAll = async (req, res, next) => {
   try {
     const allComments = await commentModel
@@ -38,33 +40,29 @@ exports.getAll = async (req, res, next) => {
       .populate("course")
       .lean();
 
-    if (allComments.length === 0) {
-      return res.status(404).json({ message: "no comments found!" });
-    }
-
     let comments = [];
 
     allComments.forEach((comment) => {
-      let mainCommentAnswerInfo = null;
-      allComments.forEach((answerComment) => {
-        if (String(comment._id) == String(answerComment.mainCommendID)) {
-          mainCommentAnswerInfo = { ...answerComment };
+      let answerInfo = null;
+      allComments.forEach((ans) => {
+        if (String(comment._id) === String(ans.mainCommendID)) {
+          answerInfo = ans;
         }
       });
       if (!comment.mainCommendID) {
         comments.push({
           ...comment,
           course: comment.course.name,
-          answerContent: mainCommentAnswerInfo,
+          answerContent: answerInfo,
         });
       }
     });
-
-    return res.json(comments);
+    return res.status(200).json(comments);
   } catch (error) {
     next(error);
   }
 };
+
 
 exports.remove = async (req, res, next) => {
   try {

@@ -174,9 +174,8 @@ export default function CommentsTextArea({ comments, submitComment }) {
               <textarea
                 className="comments__score-input-respond"
                 onChange={onChangeHandler}
-              >
-                {newCommentBody}
-              </textarea>
+                value={newCommentBody}
+              ></textarea>
             </div>
             <button
               type="submit"

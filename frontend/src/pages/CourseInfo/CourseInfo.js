@@ -6,12 +6,13 @@ import Breadcrumb from "../../Components/Breadcrumb/Breadcrumb";
 import CourseDetailBox from "../../Components/CourseDetailBox/CourseDetailBox";
 import CommentsTextArea from "../../Components/CommentsTextArea/CommentsTextArea";
 import Accordion from "react-bootstrap/Accordion";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 
 import "./CourseInfo.css";
 
 export default function CourseInfo() {
+  const navigate = useNavigate();
   const [comments, setComments] = useState([]);
   const [sessions, setSessions] = useState([]);
   const [createdAt, setCreatedAt] = useState("");
@@ -29,7 +30,6 @@ export default function CourseInfo() {
     fetch(`http://localhost:4000/v1/courses/related/${courseName}`)
       .then((res) => res.json())
       .then((allData) => {
-        console.log(allData);
         setRelatedCourses(allData);
       });
   }, []);
@@ -83,6 +83,26 @@ export default function CourseInfo() {
   };
 
   const registerInCourse = (course) => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    const token = user && user.token;
+    if (!token) {
+      swal({
+        title: "لطفاً ابتدا وارد سایت شوید",
+        icon: "warning",
+        buttons: {
+          login: {
+            text: "رفتن به صفحه لاگین",
+            value: "login",
+          },
+          cancel: "انصراف",
+        },
+      }).then((value) => {
+        if (value === "login") {
+          navigate("/login");
+        }
+      });
+      return; // بدون توکن ادامه نده
+    }
     if (course.price === 0) {
       swal({
         title: "آیا از خید محصول اطمینان دارید؟",
@@ -102,7 +122,6 @@ export default function CourseInfo() {
               price: course.price,
             }),
           }).then((res) => {
-            console.log(res);
             if (res.ok) {
               swal({
                 title: "ثبت نام با موفقیت انجام شد",
@@ -129,7 +148,7 @@ export default function CourseInfo() {
           }).then((code) => {
             if (code === null) {
               fetch(`http://localhost:4000/v1/courses/${course._id}/register`, {
-                method: "GET",
+                method: "POST",
                 headers: {
                   Authorization: `Bearer ${
                     JSON.parse(localStorage.getItem("user")).token
@@ -140,7 +159,6 @@ export default function CourseInfo() {
                   price: course.price,
                 }),
               }).then((res) => {
-                console.log(res);
                 if (res.ok) {
                   swal({
                     title: "با موفقیت به سبد خرید اضافه شد",
@@ -165,15 +183,13 @@ export default function CourseInfo() {
                 }),
               })
                 .then((res) => {
-                  console.log(res);
-
-                  if (res.status == 404) {
+                  if (res.status === 404) {
                     swal({
                       title: "کد تخفیف معتبر نیست",
                       icon: "error",
                       buttons: "تلاش مجدد",
                     });
-                  } else if (res.status == 409) {
+                  } else if (res.status === 409) {
                     swal({
                       title: "کد تخفیف قبلا استفاده شده :/",
                       icon: "error",
@@ -200,7 +216,6 @@ export default function CourseInfo() {
                       }),
                     }
                   ).then((res) => {
-                    console.log(res);
                     if (res.ok) {
                       swal({
                         title: "خرید با موفقیت انجام شد",
@@ -224,21 +239,7 @@ export default function CourseInfo() {
       <Topbar />
       <Navbar />
 
-      <Breadcrumb
-        links={[
-          { id: 1, title: "خانه", to: "" },
-          {
-            id: 2,
-            title: "آموزش برنامه نویسی فرانت‌اند",
-            to: "category-info/frontend",
-          },
-          {
-            id: 3,
-            title: "دوره متخصص جاوا اسکریپت",
-            to: "course-info/js-expert",
-          },
-        ]}
-      />
+      <Breadcrumb />
 
       <section className="course-info">
         <div className="container">
@@ -259,11 +260,11 @@ export default function CourseInfo() {
               </div>
             </div>
             <div className="col-6">
-          <img
-            src={`http://localhost:4000/courses/covers/${courseDetails.cover}`}
-            alt="Course img"
-            className="course-box__img"
-          />
+              <img
+                src={`http://localhost:4000/courses/covers/${courseDetails.cover}`}
+                alt="Course img"
+                className="course-box__img"
+              />
             </div>
           </div>
         </div>
@@ -302,7 +303,9 @@ export default function CourseInfo() {
                     </div>
                     <div className="techer-details__header-left">
                       <i className="fas  fa-shopping-bag techer-details__header-icon"></i>
-                      <span className="techer-details__header-name">فروشنده</span>
+                      <span className="techer-details__header-name">
+                        فروشنده
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -323,7 +326,7 @@ export default function CourseInfo() {
                     {courseDetails.isUserRegisteredToThisCourse === true ? (
                       <span className="course-info__register-title">
                         <i className="fas fa-graduation-cap course-info__register-icon"></i>
-                          خریدار محصول هستید
+                        خریدار محصول هستید
                       </span>
                     ) : (
                       <span
@@ -348,7 +351,7 @@ export default function CourseInfo() {
                       </div>
                       <div className="course-info__total-sale">
                         <span className="course-info__total-sale-text">
-                            قیمت :
+                          قیمت :
                         </span>
                         <span className="course-info__total-sale-number">
                           {courseDetails.price}

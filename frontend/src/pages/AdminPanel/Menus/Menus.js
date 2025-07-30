@@ -81,7 +81,6 @@ export default function Menus() {
       },
       body: JSON.stringify(newMenuInfo),
     }).then((res) => {
-      console.log(res);
       if (res.ok) {
         swal({
           title: "منوی جدید با موفقیت ایجاد شد",
@@ -96,14 +95,14 @@ export default function Menus() {
 
   return (
     <>
-      <div class="container">
-        <div class="home-title">
+      <div className="container">
+        <div className="home-title">
           <span>افزودن منوی جدید</span>
         </div>
-        <form class="form">
-          <div class="col-6">
-            <div class="name input">
-              <label class="input-title">عنوان منو</label>
+        <form className="form">
+          <div className="col-6">
+            <div className="name input">
+              <label className="input-title">عنوان منو</label>
               <Input
                 element="input"
                 onInputHandler={onInputHandler}
@@ -113,12 +112,12 @@ export default function Menus() {
                 placeholder="لطفا عنوان منو را وارد کنید..."
                 validations={[minValidator(5)]}
               />
-              <span class="error-message text-danger"></span>
+              <span className="error-message text-danger"></span>
             </div>
           </div>
-          <div class="col-6">
-            <div class="name input">
-              <label class="input-title">مقصد</label>
+          <div className="col-6">
+            <div className="name input">
+              <label className="input-title">مقصد</label>
               <Input
                 element="input"
                 onInputHandler={onInputHandler}
@@ -128,31 +127,31 @@ export default function Menus() {
                 validations={[minValidator(5)]}
                 placeholder="لطفا مقصد را وارد کنید..."
               />
-              <span class="error-message text-danger"></span>
+              <span className="error-message text-danger"></span>
             </div>
           </div>
-          <div class="col-6">
-            <div class="name input">
-              <label class="input-title">منوی والد</label>
+          <div className="col-6">
+            <div className="name input">
+              <label className="input-title">منوی والد</label>
               <select
-                class="select"
+                className="select"
                 onChange={(event) => setMenuParent(event.target.value)}
               >
                 <option value="-1">منوی اصلی را انتخاب کنید</option>
-                {menus.map((menu) => (
-                  <>
-                    {!Boolean(menu.parent) && (
-                      <option value={menu._id}>{menu.title}</option>
-                    )}
-                  </>
-                ))}
+                {menus.map((menu) =>
+                  !Boolean(menu.parent) ? (
+                    <option key={menu._id} value={menu._id}>
+                      {menu.title}
+                    </option>
+                  ) : null
+                )}
               </select>
-              <span class="error-message text-danger"></span>
+              <span className="error-message text-danger"></span>
             </div>
           </div>
-          <div class="col-12">
-            <div class="bottom-form">
-              <div class="submit-btn">
+          <div className="col-12">
+            <div className="bottom-form">
+              <div className="submit-btn">
                 <input type="submit" value="افزودن" onClick={createMenu} />
               </div>
             </div>
@@ -161,7 +160,7 @@ export default function Menus() {
       </div>
 
       <DataTable title="منوها">
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th>شناسه</th>
@@ -174,7 +173,7 @@ export default function Menus() {
           </thead>
           <tbody>
             {menus.map((menu, index) => (
-              <tr>
+              <tr key={menu._id}>
                 <td>{index + 1}</td>
                 <td>{menu.title}</td>
                 <td>{menu.href}</td>
@@ -186,14 +185,14 @@ export default function Menus() {
                   )}
                 </td>
                 <td>
-                  <button type="button" class="btn btn-primary edit-btn">
+                  <button type="button" className="btn btn-primary edit-btn">
                     ویرایش
                   </button>
                 </td>
                 <td>
                   <button
                     type="button"
-                    class="btn btn-danger delete-btn"
+                    className="btn btn-danger delete-btn"
                     onClick={() => removeMenu(menu._id)}
                   >
                     حذف

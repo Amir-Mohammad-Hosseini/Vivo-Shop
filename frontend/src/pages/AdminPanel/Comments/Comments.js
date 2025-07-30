@@ -10,9 +10,21 @@ export default function Comments() {
   }, []);
 
   function getAllComments() {
-    fetch("http://localhost:4000/v1/comments")
-      .then((res) => res.json())
-      .then((allComments) => setComments(allComments));
+    fetch("http://localhost:4000/v1/comment")
+      .then((res) => {
+        if (!res.ok) {
+          console.error("Failed to fetch comments:", res.status);
+          return [];
+        }
+        return res.json();
+      })
+      .then((allComments) => {
+        setComments(allComments);
+      })
+      .catch((err) => {
+        console.error("Network or parsing error:", err);
+        setComments([]);
+      });
   }
 
   const removeComment = (commentID) => {
@@ -174,7 +186,7 @@ export default function Comments() {
   return (
     <>
       <DataTable title="کامنت‌ها">
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th>شناسه</th>
@@ -191,7 +203,7 @@ export default function Comments() {
           </thead>
           <tbody>
             {comments.map((comment, index) => (
-              <tr>
+              <tr key={comment._id}>
                 <td
                   className={
                     comment.answer === 1
@@ -204,21 +216,21 @@ export default function Comments() {
                 <td>{comment.creator.name}</td>
                 <td>{comment.course}</td>
                 <td>
-                  {
-                    Array(5 - comment.score).fill(0).map(item => (
+                  {Array(5 - comment.score)
+                    .fill(0)
+                    .map((item) => (
                       <img src="/images/svgs/star.svg" alt="score" />
-                    ))
-                  }
-                  {
-                    Array(comment.score).fill(0).map(item => (
+                    ))}
+                  {Array(comment.score)
+                    .fill(0)
+                    .map((item) => (
                       <img src="/images/svgs/star_fill.svg" alt="score" />
-                    ))
-                  }
+                    ))}
                 </td>
                 <td>
                   <button
                     type="button"
-                    class="btn btn-primary edit-btn"
+                    className="btn btn-primary edit-btn"
                     onClick={() => showCommentBody(comment.body)}
                   >
                     مشاهده
@@ -227,7 +239,7 @@ export default function Comments() {
                 <td>
                   <button
                     type="button"
-                    class="btn btn-primary edit-btn"
+                    className="btn btn-primary edit-btn"
                     onClick={() => answerToComment(comment._id)}
                   >
                     پاسخ
@@ -237,7 +249,7 @@ export default function Comments() {
                   <td>
                     <button
                       type="button"
-                      class="btn btn-danger delete-btn"
+                      className="btn btn-danger delete-btn"
                       onClick={() => rejectComment(comment._id)}
                     >
                       رد
@@ -247,7 +259,7 @@ export default function Comments() {
                   <td>
                     <button
                       type="button"
-                      class="btn btn-primary edit-btn"
+                      className="btn btn-primary edit-btn"
                       onClick={() => acceptComment(comment._id)}
                     >
                       تایید
@@ -255,14 +267,14 @@ export default function Comments() {
                   </td>
                 )}
                 <td>
-                  <button type="button" class="btn btn-primary edit-btn">
+                  <button type="button" className="btn btn-primary edit-btn">
                     ویرایش
                   </button>
                 </td>
                 <td>
                   <button
                     type="button"
-                    class="btn btn-danger delete-btn"
+                    className="btn btn-danger delete-btn"
                     onClick={() => removeComment(comment._id)}
                   >
                     حذف
@@ -271,7 +283,7 @@ export default function Comments() {
                 <td>
                   <button
                     type="button"
-                    class="btn btn-danger delete-btn"
+                    className="btn btn-danger delete-btn"
                     onClick={() => banUser(comment.creator._id)}
                   >
                     بن

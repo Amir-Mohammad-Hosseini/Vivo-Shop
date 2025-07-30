@@ -117,19 +117,6 @@ body {
     display: flex;
     align-items: center;
 }
-.main-header__search-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 4.3rem;
-    height: 4.3rem;
-    border-radius: 0.5rem;
-    background-color: var(--primary-color);
-}
-.main-header__search-icon {
-    color: var(--white-color);
-    font-size: 2.2rem;
-}
 .main-header__cart-btn {
     display: flex;
     justify-content: center;

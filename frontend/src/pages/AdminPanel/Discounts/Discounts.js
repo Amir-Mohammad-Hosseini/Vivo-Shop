@@ -33,26 +33,26 @@ export default function Discounts() {
 
   return (
     <>
-      <div class="home-title">
+      <div className="home-title">
         <span>برگزاری کمپین جدید</span>
       </div>
-      <form class="form">
-        <div class="col-6">
-          <div class="name input">
-            <label class="input-title">درصد تخفیف</label>
+      <form className="form">
+        <div className="col-6">
+          <div className="name input">
+            <label className="input-title">درصد تخفیف</label>
             <input
               type="text"
               value={discount}
               placeholder="لطفا درصد تخفیف همگانی را وارد کنید..."
               onChange={(event) => setDiscount(event.target.value)}
             />
-            <span class="error-message text-danger"></span>
+            <span className="error-message text-danger"></span>
           </div>
         </div>
 
-        <div class="col-12">
-          <div class="bottom-form">
-            <div class="submit-btn">
+        <div className="col-12">
+          <div className="bottom-form">
+            <div className="submit-btn">
               <input type="submit" value="ایجاد کمپین" onClick={setDiscounts} />
             </div>
           </div>

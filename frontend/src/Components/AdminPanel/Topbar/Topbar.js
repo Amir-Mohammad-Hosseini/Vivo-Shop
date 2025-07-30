@@ -34,43 +34,43 @@ export default function Topbar() {
   }
 
   return (
-    <div class="container-fluid">
-      <div class="container">
+    <div className="container-fluid">
+      <div className="container">
         <div
-          class={`home-header ${
+          className={`home-header ${
             isShowNotificationsBox && "active-modal-notfication"
           }`}
         >
-          <div class="home-right">
-            <div class="home-searchbar">
-              <input type="text" class="search-bar" placeholder="جستجو..." />
+          <div className="home-right">
+            <div className="home-searchbar">
+              <input type="text" className="search-bar" placeholder="جستجو..." />
             </div>
-            <div class="home-notification">
+            <div className="home-notification">
               <button
                 type="button"
                 onMouseEnter={() => setIsShowNotificationsBox(true)}
               >
-                <i class="far fa-bell"></i>
+                <i className="far fa-bell"></i>
               </button>
             </div>
             <div
-              class="home-notification-modal"
+              className="home-notification-modal"
               onMouseEnter={() => setIsShowNotificationsBox(true)}
               onMouseLeave={() => setIsShowNotificationsBox(false)}
             >
-              <ul class="home-notification-modal-list">
+              <ul className="home-notification-modal-list">
                 {adminNotifications.length === 0 ? (
-                  <li class="home-notification-modal-item">
+                  <li className="home-notification-modal-item">
                     نوتیفکیشنی برای نمایش وجود ندارد
                   </li>
                 ) : (
                   <>
                     {adminNotifications.map((notification) => (
-                      <li class="home-notification-modal-item">
-                        <span class="home-notification-modal-text">
+                      <li className="home-notification-modal-item">
+                        <span className="home-notification-modal-text">
                           {notification.msg}
                         </span>
-                        <label class="switch">
+                        <label className="switch">
                           <a
                             href="javascript:void(0)"
                             onClick={() => seeNotification(notification._id)}
@@ -85,18 +85,18 @@ export default function Topbar() {
               </ul>
             </div>
           </div>
-          <div class="home-left">
-            <div class="home-profile">
-              <div class="home-profile-image">
+          <div className="home-left">
+            <div className="home-profile">
+              <div className="home-profile-image">
                 <a href="#">
                   <img src={adminInfo.profile} alt="" />
                 </a>
               </div>
-              <div class="home-profile-name">
+              <div className="home-profile-name">
                 <a href="#">{adminInfo.name}</a>
               </div>
-              <div class="home-profile-icon">
-                <i class="fas fa-angle-down"></i>
+              <div className="home-profile-icon">
+                <i className="fas fa-angle-down"></i>
               </div>
             </div>
           </div>

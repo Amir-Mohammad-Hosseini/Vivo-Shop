@@ -1,10 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 import AuthContext from "../../context/authContext";
+import swal from 'sweetalert';
 
 import "./Navbar.css";
 
 export default function Navbar() {
+  const navigate = useNavigate()
   const [allMenus, setAllMenus] = useState([]);
   const authContext = useContext(AuthContext);
 
@@ -15,6 +17,35 @@ export default function Navbar() {
         setAllMenus(menus);
       });
   }, []);
+    const handleCartClick = (event) => {
+    event.preventDefault();
+    if (!authContext.isLoggedIn) {
+      // اگر وارد نشده است
+      swal({
+        title: "لطفاً ابتدا وارد سایت شوید",
+        icon: "warning",
+        buttons: {
+          login: { text: "رفتن به صفحه لاگین", value: "login" },
+          cancel: "انصراف",
+        },
+      }).then((value) => {
+        if (value === "login") {
+          navigate("/login");
+        }
+      });
+    } else if (authContext.userInfos.role === "ADMIN") {
+      // اگر مدیر است
+      swal({
+        title: "دسترسی مدیر به سبد خرید وجود ندارد",
+        text: "برای مشاهده سفارشات لطفاً با حساب کاربری عادی وارد شوید",
+        icon: "error",
+        button: "متوجه شدم",
+      });
+    } else {
+      // کاربر عادی
+      navigate("/my-account/orders");
+    }
+  };
 
   return (
     <div className="main-header">
@@ -69,10 +100,7 @@ export default function Navbar() {
           </div>
 
           <div className="main-header__left">
-            <a href="#" className="main-header__search-btn">
-              <i className="fas fa-search main-header__search-icon"></i>
-            </a>
-            <a href="my-account/orders" className="main-header__cart-btn">
+            <a href="#" onClick={handleCartClick} className="main-header__cart-btn">
               <i className="fas fa-shopping-cart main-header__cart-icon"></i>
             </a>
 

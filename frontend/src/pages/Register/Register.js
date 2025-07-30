@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
 import Button from "../../Components/Form/Button";
 import Input from "../../Components/Form/Input";
@@ -19,6 +19,7 @@ import swal from "sweetalert";
 
 export default function Register() {
   const authContext = useContext(AuthContext);
+  const navigate = useNavigate()
 
   const [formState, onInputHandler] = useForm(
     {
@@ -45,7 +46,6 @@ export default function Register() {
     },
     false
   );
-
 const registerNewUser = (event) => {
   event.preventDefault();
 
@@ -65,19 +65,22 @@ const registerNewUser = (event) => {
   })
     .then((res) => {
       if (res.ok) {
+        swal({ title: "ثبت نام با موفقیت انجام شد", icon: "success" });
         return res.json();
-      }
-      if (res.status === 403) {
-        swal({ title: "این شماره تماس مسدود شده", icon: "error" });
-      } else if (res.status === 409) {
-        swal({ title: "کاربر با این ایمیل/نام‌کاربری/تلفن قبلاً ثبت شده", icon: "warning" });
-      } else {
-        swal({ title: "خطا در ثبت‌نام، لطفاً دوباره تلاش کنید", icon: "error" });
+      }else{
+        if (res.status === 403) {
+          swal({ title: "این شماره تماس مسدود شده", icon: "error" });
+        } else if (res.status === 409) {
+          swal({ title: "کاربر با این ایمیل/نام‌کاربری/تلفن قبلاً ثبت شده", icon: "warning" });
+        } else {
+          swal({ title: "خطا در ثبت‌نام، لطفاً دوباره تلاش کنید", icon: "error" });
+        }
       }
       throw new Error("Registration failed with status " + res.status);
     })
     .then((result) => {
       authContext.login(result.user, result.accessToken);
+      navigate("/")
     })
     .catch((err) => {
       console.error("Register error:", err);

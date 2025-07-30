@@ -76,26 +76,26 @@ export default function SendTicket() {
   };
 
   return (
-    <div class="col-9">
-      <div class="ticket">
-        <div class="ticket-header">
-          <span class="ticket-header__title">ارسال تیکت جدید</span>
-          <a class="ticket-header__link" href="#">
+    <div className="col-9">
+      <div className="ticket">
+        <div className="ticket-header">
+          <span className="ticket-header__title">ارسال تیکت جدید</span>
+          <a className="ticket-header__link" href="#">
             همه تیکت ها
           </a>
         </div>
-        <form class="ticket-form" action="#">
-          <div class="row">
-            <div class="col-6">
-              <label class="ticket-form__label">دپارتمان را انتخاب کنید:</label>
+        <form className="ticket-form" action="#">
+          <div className="row">
+            <div className="col-6">
+              <label className="ticket-form__label">دپارتمان را انتخاب کنید:</label>
               <select
-                class="ticket-form__select"
+                className="ticket-form__select"
                 onChange={(event) => {
                   getDepartmentsSub(event.target.value);
                   setDepartmentID(event.target.value);
                 }}
               >
-                <option class="ticket-form__option">
+                <option className="ticket-form__option">
                   لطفا یک مورد را انتخاب نمایید.
                 </option>
                 {departments.map((department) => (
@@ -103,13 +103,13 @@ export default function SendTicket() {
                 ))}
               </select>
             </div>
-            <div class="col-6">
-              <label class="ticket-form__label">نوع تیکت را انتخاب کنید:</label>
+            <div className="col-6">
+              <label className="ticket-form__label">نوع تیکت را انتخاب کنید:</label>
               <select
-                class="ticket-form__select"
+                className="ticket-form__select"
                 onChange={(event) => setTicketTypeID(event.target.value)}
               >
-                <option class="ticket-form__option">
+                <option className="ticket-form__option">
                   لطفا یک مورد را انتخاب نمایید.
                 </option>
                 {departmentsSubs.map((sub) => (
@@ -117,23 +117,23 @@ export default function SendTicket() {
                 ))}
               </select>
             </div>
-            <div class="col-6">
-              <label class="ticket-form__label">عنوان تیکت را وارد کنید:</label>
+            <div className="col-6">
+              <label className="ticket-form__label">عنوان تیکت را وارد کنید:</label>
               <input
-                class="ticket-form__input"
+                className="ticket-form__input"
                 type="text"
                 onChange={(event) => setTitle(event.target.value)}
               />
             </div>
-            <div class="col-6">
-              <label class="ticket-form__label">
+            <div className="col-6">
+              <label className="ticket-form__label">
                 سطح اولویت تیکت را انتخاب کنید:
               </label>
               <select
-                class="ticket-form__select"
+                className="ticket-form__select"
                 onChange={(event) => setPriority(event.target.value)}
               >
-                <option class="ticket-form__option">
+                <option className="ticket-form__option">
                   لطفا یک مورد را انتخاب نمایید.
                 </option>
                 <option value="3">کم</option>
@@ -142,13 +142,13 @@ export default function SendTicket() {
               </select>
             </div>
             {ticketTypeID === "637753247b52cb74cad00e27" && (
-              <div class="col-6">
-                <label class="ticket-form__label">محصول را انتخاب کنید:</label>
+              <div className="col-6">
+                <label className="ticket-form__label">محصول را انتخاب کنید:</label>
                 <select
-                  class="ticket-form__select"
+                  className="ticket-form__select"
                   onChange={(event) => setCourseID(event.target.value)}
                 >
-                  <option class="ticket-form__option">
+                  <option className="ticket-form__option">
                     لطفا یک مورد را انتخاب نمایید.
                   </option>
                   {courses.map((course) => (
@@ -159,29 +159,29 @@ export default function SendTicket() {
                 </select>
               </div>
             )}
-            <div class="col-12">
-              <label class="ticket-form__label">
+            <div className="col-12">
+              <label className="ticket-form__label">
                 محتوای تیکت را وارد نمایید:
               </label>
               <textarea
-                class="ticket-form__textarea"
+                className="ticket-form__textarea"
                 onChange={(event) => setBody(event.target.value)}
               ></textarea>
             </div>
-            <div class="col-12">
-              <div class="ticket-form__file">
-                <span class="ticket-form__file-max">
+            <div className="col-12">
+              <div className="ticket-form__file">
+                <span className="ticket-form__file-max">
                   حداکثر اندازه: 6 مگابایت
                 </span>
-                <span class="ticket-form__file-format">
+                <span className="ticket-form__file-format">
                   فرمت‌های مجاز: jpg, png.jpeg, rar, zip
                 </span>
-                <input class="ticket-form__file-input" type="file" />
+                <input className="ticket-form__file-input" type="file" />
               </div>
             </div>
-            <div class="col-12">
-              <button class="ticket-form__btn" onClick={sendTicket}>
-                <i class="ticket-form__btn-icon fa fa-paper-plane"></i>
+            <div className="col-12">
+              <button className="ticket-form__btn" onClick={sendTicket}>
+                <i className="ticket-form__btn-icon fa fa-paper-plane"></i>
                 ارسال تیکت
               </button>
             </div>

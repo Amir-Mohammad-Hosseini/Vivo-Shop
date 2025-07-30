@@ -49,13 +49,13 @@ export default function Courses() {
   };
 
   return (
-    <div class="col-9">
-      <div class="courses">
-        <div class="courses-header__panel">
-          <span class="courses-header__title">محصولات اضافه شده به سبد</span>
-          <ul class="courses-header__list">
+    <div className="col-9">
+      <div className="courses">
+        <div className="courses-header__panel">
+          <span className="courses-header__title">محصولات اضافه شده به سبد</span>
+          <ul className="courses-header__list">
             <li
-              class="courses-header__item"
+              className="courses-header__item"
               onClick={(event) => {
                 event.preventDefault();
                 setShowCourseState("all");
@@ -63,7 +63,7 @@ export default function Courses() {
               }}
             >
               <a
-                class={`courses-header__link__panel ${
+                className={`courses-header__link__panel ${
                   showCourseState === "all"
                     ? "courses-header__link-active"
                     : null
@@ -74,7 +74,7 @@ export default function Courses() {
               </a>
             </li>
             <li
-              class="courses-header__item"
+              className="courses-header__item"
               onClick={(event) => {
                 event.preventDefault();
                 setShowCourseState("free");
@@ -82,7 +82,7 @@ export default function Courses() {
               }}
             >
               <a
-                class={`courses-header__link__panel ${
+                className={`courses-header__link__panel ${
                   showCourseState === "free"
                     ? "courses-header__link-active"
                     : null
@@ -93,7 +93,7 @@ export default function Courses() {
               </a>
             </li>
             <li
-              class="courses-header__item"
+              className="courses-header__item"
               onClick={(event) => {
                 event.preventDefault();
                 setShowCourseState("money");
@@ -101,7 +101,7 @@ export default function Courses() {
               }}
             >
               <a
-                class={`courses-header__link__panel ${
+                className={`courses-header__link__panel ${
                   showCourseState === "money"
                     ? "courses-header__link-active"
                     : null
@@ -113,37 +113,37 @@ export default function Courses() {
             </li>
           </ul>
         </div>
-        <div class="main">
-          <div class="row">
-            <div class="col-12">
+        <div className="main">
+          <div className="row">
+            <div className="col-12">
               {shownCourses.length !== 0 ? (
                 <>
                   {shownCourses.map((course) => (
-                    <div class="main__box">
-                      <div class="main__box-right">
-                        <a class="main__box-img-link" href="#">
+                    <div className="main__box" key={course._id}>
+                      <div className="main__box-right">
+                        <a className="main__box-img-link" href="#">
                           <img
-                            class="main__box-img img-fluid"
+                            className="main__box-img img-fluid"
                             src={`http://localhost:4000/courses/covers/${course.course.cover}`}
                           />
                         </a>
                       </div>
-                      <div class="main__box-left">
-                        <a href="#" class="main__box-title">
+                      <div className="main__box-left">
+                        <a href="#" className="main__box-title">
                           {course.course.name}
                         </a>
-                        <div class="main__box-bottom">
-                          <div class="main__box-all">
-                            <span class="main__box-all-text">وضعیت:</span>
-                            <span class="main__box-all-value">
+                        <div className="main__box-bottom">
+                          <div className="main__box-all">
+                            <span className="main__box-all-text">وضعیت:</span>
+                            <span className="main__box-all-value">
                               {course.course.isComplete === 1
                                 ? "اتمام موجودی"
                                 : "موجود"}
                             </span>
                           </div>
-                          <div class="main__box-completed">
-                            <span class="main__box-completed-text">مبلغ:</span>
-                            <span class="main__box-completed-value">
+                          <div className="main__box-completed">
+                            <span className="main__box-completed-text">مبلغ:</span>
+                            <span className="main__box-completed-value">
                               {course.course.price === 0
                                 ? "رایگان"
                                 : course.course.price}
